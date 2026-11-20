@@ -9,6 +9,23 @@
   });
 
   var items = [].slice.call(document.querySelectorAll('.reveal'));
+  var form = document.getElementById('contactForm');
+  if (form) form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = form.elements, note = document.getElementById('formNote'), ok = true;
+    ['first', 'last', 'email', 'message'].forEach(function (n) {
+      var bad = !f[n].value.trim() || (n === 'email' && !/^\S+@\S+\.\S+$/.test(f[n].value.trim()));
+      f[n].classList.toggle('bad', bad);
+      if (bad && ok) { f[n].focus(); ok = false; }
+    });
+    note.hidden = false;
+    if (!ok) { note.textContent = 'Please fill in the fields marked with *.'; return; }
+    var name = f.first.value.trim() + ' ' + f.last.value.trim();
+    var body = 'Name: ' + name + '\nEmail: ' + f.email.value.trim() + '\nPhone: ' + (f.phone.value.trim() || '-') + '\n\n' + f.message.value.trim();
+    note.textContent = 'Your email app should now open with your message ready to send. If it does not, please call 310-300-3125.';
+    window.location.href = 'mailto:' + form.getAttribute('data-u') + '@' + form.getAttribute('data-d') + '?subject=' + encodeURIComponent('Website inquiry from ' + name) + '&body=' + encodeURIComponent(body);
+  });
+
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });

@@ -15,7 +15,7 @@
 <body class="contact">
 <header class="site-head">
   <div class="wrap head-in">
-    <a class="logo" href="./" aria-label="Dr. Yehudah Pryce, home"><img src="https://static.wixstatic.com/media/2420d2_77aa4dcaa2094bbdabb60523f1b26c0c~mv2.png/v1/fill/w_400,h_236,al_c,q_90/logo.png" alt="Dr. Yehudah Pryce" width="400" height="236"></a>
+    <a class="logo" href="./" aria-label="Dr. Yehudah Pryce, home"><img src="media/logo.png" alt="Dr. Yehudah Pryce" width="400" height="236"></a>
     <nav class="nav" id="nav" aria-label="Site"><a href="./">Home</a><a href="services">Services</a><a href="about">About</a><a href="contact" aria-current="page">Contact</a></nav>
     <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
   </div>
@@ -24,11 +24,23 @@
 <section class="page-intro">
   <div class="wrap">
     <h1>Get in Touch</h1>
-    <p class="lede">Ready to begin? Call to explore how psychotherapy, coaching, or forensic consulting can support your goals.</p>
+    <p class="lede">Ready to begin? Send a message to explore how psychotherapy, coaching, or forensic consulting can support your goals.</p>
   </div>
 </section>
 <section class="sec" style="padding-top:0">
   <div class="wrap">
+    <form class="form reveal" id="contactForm" data-u="ypryce" data-d="dryehudahprycelcsw.com" novalidate>
+      <label><span>First Name <i aria-hidden="true">*</i></span><input type="text" name="first" autocomplete="given-name" required></label>
+      <label><span>Last Name <i aria-hidden="true">*</i></span><input type="text" name="last" autocomplete="family-name" required></label>
+      <label><span>Email Address <i aria-hidden="true">*</i></span><input type="email" name="email" autocomplete="email" required></label>
+      <label>Phone Number<input type="tel" name="phone" autocomplete="tel"></label>
+      <label class="full"><span>Message <i aria-hidden="true">*</i></span><textarea name="message" rows="6" required></textarea></label>
+      <div class="full form-foot">
+        <button class="btn gold" type="submit">Submit</button>
+        <p class="form-note" id="formNote" role="status" hidden></p>
+      </div>
+      <noscript><p class="form-note full">To send a message, please call 310-300-3125.</p></noscript>
+    </form>
     <div class="contact-grid reveal">
       <div><span class="k">Phone</span><a class="big" href="tel:+13103003125">310-300-3125</a></div>
       <div><span class="k">Office</span><span class="big">369 S Doheny Dr., #148<br>Beverly Hills, CA 90211</span></div>
@@ -39,7 +51,7 @@
 </main>
 <footer class="site-foot">
   <div class="wrap">
-    <img src="https://static.wixstatic.com/media/2420d2_77aa4dcaa2094bbdabb60523f1b26c0c~mv2.png/v1/fill/w_400,h_236,al_c,q_90/logo.png" alt="Dr. Yehudah Pryce" width="400" height="236" loading="lazy">
+    <img src="media/logo.png" alt="Dr. Yehudah Pryce" width="400" height="236" loading="lazy">
     <p>Dr. Yehudah Pryce, DSW, LCSW &bull; License #126620</p>
     <p><a href="tel:+13103003125">310-300-3125</a> &bull; 369 S Doheny Dr., #148, Beverly Hills, CA 90211</p>
     <p class="copy">&copy; 2026 Dr. Yehudah Pryce Psychotherapy. All rights reserved.</p>
